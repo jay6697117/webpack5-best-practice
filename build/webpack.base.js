@@ -1,6 +1,7 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 const rootDir = process.cwd();
 
@@ -15,8 +16,8 @@ module.exports = {
     rules: [
       {
         test: /\.(le|c)ss$/,
-        use: ['style-loader', 'css-loader', 'less-loader'],
-        // include: path.resolve(rootDir, './src'),
+        use: ['style-loader', 'css-loader', 'less-loader', 'postcss-loader'],
+        include: path.resolve(rootDir, './src'),
         exclude: /node_modules/ // 排除node_modules
       },
       {
