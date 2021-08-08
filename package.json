@@ -1,0 +1,36 @@
+{
+  "name": "webpack5-best-practice",
+  "version": "1.0.0",
+  "description": "webpack5最佳实践",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development npx webpack serve --config build/webpack.dev.js",
+    "build": "NODE_ENV=production npx webpack --config build/webpack.prod.js",
+    "build:rm": "rimraf dist && NODE_ENV=production npx webpack --config build/webpack.prod.js"
+  },
+  "keywords": [
+    "webpack5"
+  ],
+  "author": "zjh",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-decorators": "^7.14.5",
+    "@babel/plugin-proposal-private-methods": "^7.14.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "html-webpack-plugin": "^5.3.2",
+    "rimraf": "^3.0.2",
+    "webpack": "5.39.1",
+    "webpack-cli": "4.7.2",
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.14.8",
+    "@babel/runtime-corejs3": "^7.14.9"
+  }
+}
