@@ -1,7 +1,8 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssPlugin = require('optimize-css-assets-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const rootDir = process.cwd(); // 项目根目录
 
 module.exports = {
@@ -33,9 +34,18 @@ module.exports = {
       inject: 'body',
       scriptLoading: 'blocking'
     }),
-    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: './css/[name].[contenthash:8].css'
+    }),
+    new OptimizeCssPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          context: path.resolve(rootDir, './public/lib'),
+          from: '*.js',
+          to: path.resolve(rootDir, './dist/lib')
+        }
+      ]
     })
   ]
 };
