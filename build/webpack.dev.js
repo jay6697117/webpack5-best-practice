@@ -5,7 +5,7 @@ console.log(`process.env.NODE_ENV:`, process.env.NODE_ENV);
 
 module.exports = merge(baseconfig, {
   mode: 'development',
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'eval-cheap-module-source-map',
   devServer: {
     open: true,
     host: '0.0.0.0',

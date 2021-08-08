@@ -14,6 +14,12 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(le|c)ss$/,
+        use: ['style-loader', 'css-loader', 'less-loader'],
+        // include: path.resolve(rootDir, './src'),
+        exclude: /node_modules/ // 排除node_modules
+      },
+      {
         test: /\.(jsx|js)$/,
         use: 'babel-loader',
         include: path.resolve(rootDir, './src'),
