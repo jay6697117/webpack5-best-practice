@@ -1,11 +1,11 @@
 import './css/index.css';
 import './css/index.less';
-import avatar from './assets/avatar.png';
+import wuhanfighting from './assets/武汉加油.png';
 
 class Test {
-  constructor(name, avatar) {
+  constructor(name, img) {
     this.name = name;
-    this.avatar = avatar;
+    this.img = img;
     this.renderImg();
   }
   say() {
@@ -21,7 +21,7 @@ class Test {
   renderImg() {
     // imgNode
     const imgNode = document.createElement('img');
-    imgNode.src = this.avatar;
+    imgNode.src = this.img;
     document.getElementById('app').appendChild(imgNode);
     // divNode
     const divNode = document.createElement('div');
@@ -33,6 +33,6 @@ class Test {
     document.getElementById('app').appendChild(divNode);
   }
 }
-const p = new Test('张金辉', avatar);
+const p = new Test('张金辉', wuhanfighting);
 console.log(`p:`, p);
 p.say();
