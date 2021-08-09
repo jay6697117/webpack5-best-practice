@@ -14,10 +14,28 @@ module.exports = {
   },
   module: {
     rules: [
+      // {
+      //   test: /\.(png|jpg|gif|jpeg|webp|svg|eot|ttf|woff|woff2)$/,
+      //   type: 'asset'
+      // },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 1000,
+              name: './img/[name].[contenthash:8].[ext]'
+            }
+          }
+        ],
+        include: path.resolve(rootDir, './src/assets'),
+        exclude: /node_modules/ // 排除node_modules
+      },
       {
         test: /\.(le|c)ss$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader', 'postcss-loader'],
-        include: path.resolve(rootDir, './src'),
+        include: path.resolve(rootDir, './src/css'),
         exclude: /node_modules/ // 排除node_modules
       },
       {
