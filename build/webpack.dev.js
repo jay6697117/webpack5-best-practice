@@ -20,5 +20,8 @@ module.exports = merge(baseconfig, {
         }
       }
     }
+  },
+  cache: {
+    type: 'memory'
   }
 });
