@@ -29,7 +29,7 @@ class Test {
     divNode.style.background = '#eee';
     divNode.style.border = '1px solid #000';
     divNode.className = 'color-red';
-    divNode.innerHTML = `名字: ${name}`;
+    divNode.innerHTML = `名字: ${this.name}`;
     document.getElementById('app').appendChild(divNode);
   }
 }
