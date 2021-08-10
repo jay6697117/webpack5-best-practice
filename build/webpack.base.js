@@ -48,7 +48,8 @@ module.exports = {
       },
       {
         test: /\.(jsx|js)$/,
-        use: 'babel-loader',
+        use: 'babel-loader?cacheDirectory=true',
+        // use: 'babel-loader',
         include: path.resolve(rootDir, './src'),
         exclude: /node_modules/ // 排除node_modules
       }
