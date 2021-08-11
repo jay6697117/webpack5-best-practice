@@ -22,7 +22,7 @@ module.exports = {
             maxSize: 1000
           }
         },
-        generator:{
+        generator: {
           filename: './img/[name].[contenthash:8].[ext]'
         }
       },
@@ -48,8 +48,8 @@ module.exports = {
       },
       {
         test: /\.(jsx|js)$/,
-        use: 'babel-loader?cacheDirectory=true',
-        // use: 'babel-loader',
+        use: ['thread-loader', 'babel-loader?cacheDirectory=true'], // 缓存
+        // use: ['thread-loader', 'babel-loader'],  // 无缓存
         include: path.resolve(rootDir, './src'),
         exclude: /node_modules/ // 排除node_modules
       }

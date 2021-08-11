@@ -3289,7 +3289,7 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.nlark.com/lines-and-columns/download/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-loader-runner@^4.2.0:
+loader-runner@^4.1.0, loader-runner@^4.2.0:
   version "4.2.0"
   resolved "https://registry.npm.taobao.org/loader-runner/download/loader-runner-4.2.0.tgz?cache=0&sync_timestamp=1610027943366&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Floader-runner%2Fdownload%2Floader-runner-4.2.0.tgz#d7022380d66d14c5fb1d496b89864ebcfd478384"
   integrity sha1-1wIjgNZtFMX7HUlriYZOvP1Hg4Q=
@@ -5052,6 +5052,17 @@ terser@^5.7.0:
     commander "^2.20.0"
     source-map "~0.7.2"
     source-map-support "~0.5.19"
+
+thread-loader@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.nlark.com/thread-loader/download/thread-loader-3.0.4.tgz#c392e4c0241fbc80430eb680e4886819b504a31b"
+  integrity sha1-w5LkwCQfvIBDDraA5IhoGbUEoxs=
+  dependencies:
+    json-parse-better-errors "^1.0.2"
+    loader-runner "^4.1.0"
+    loader-utils "^2.0.0"
+    neo-async "^2.6.2"
+    schema-utils "^3.0.0"
 
 thunky@^1.0.2:
   version "1.1.0"
