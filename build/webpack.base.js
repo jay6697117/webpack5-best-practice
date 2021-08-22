@@ -76,7 +76,7 @@ module.exports = {
       ]
     }),
     new TinyimgPlugin({
-      enabled: process.env.NODE_ENV === 'production',
+      enabled: process.env.NODE_ENV === 'production', //仅生产环境可用
       logged: true
     })
   ]
