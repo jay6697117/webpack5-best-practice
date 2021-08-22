@@ -15,11 +15,11 @@ module.exports = {
   module: {
     rules: [
       // {
-      //   test: /\.(png|jpg|gif|jpeg|webp|svg)$/,
+      //   test: /\.(png|jpg|gif|jpeg|svg)$/,
       //   type: 'asset',
       //   parser: {
       //     dataUrlCondition: {
-      //       maxSize: 10240 // 10M
+      //       maxSize: 1372125 // 1.3M - 1字节
       //     }
       //   },
       //   generator: {
@@ -32,8 +32,27 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              limit: 1000,
+              limit: 1372125, // 1.3M - 1字节
               name: './img/[name].[contenthash:8].[ext]'
+            }
+          },
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 65
+              },
+              optipng: {
+                enabled: true
+              },
+              pngquant: {
+                quality: [0.65, 0.9],
+                speed: 4
+              },
+              gifsicle: {
+                interlaced: false
+              }
             }
           }
         ],
