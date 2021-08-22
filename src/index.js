@@ -1,6 +1,7 @@
 import './css/index.css';
 import './css/index.less';
-import wuhanfighting from './assets/武汉加油.png';
+// import wuhanfighting from './assets/武汉加油.png';
+import testCompression from './assets/测试压缩.png';
 
 class Test {
   constructor(name, img) {
@@ -33,6 +34,7 @@ class Test {
     document.getElementById('app').appendChild(divNode);
   }
 }
-const p = new Test('张金辉', wuhanfighting);
+// const p = new Test('张金辉', wuhanfighting);
+const p = new Test('张金辉', testCompression);
 console.log(`p:`, p);
 p.say();
