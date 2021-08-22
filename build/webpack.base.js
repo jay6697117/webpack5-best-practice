@@ -3,6 +3,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TinyimgPlugin = require('tinyimg-webpack-plugin');
 const rootDir = process.cwd(); // 项目根目录
 
 module.exports = {
@@ -34,25 +35,6 @@ module.exports = {
             options: {
               limit: 1372125, // 1.3M - 1字节
               name: './img/[name].[contenthash:8].[ext]'
-            }
-          },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              mozjpeg: {
-                progressive: true,
-                quality: 65
-              },
-              optipng: {
-                enabled: true
-              },
-              pngquant: {
-                quality: [0.65, 0.9],
-                speed: 4
-              },
-              gifsicle: {
-                interlaced: false
-              }
             }
           }
         ],
@@ -92,6 +74,10 @@ module.exports = {
           to: path.resolve(rootDir, './dist/lib')
         }
       ]
+    }),
+    new TinyimgPlugin({
+      enabled: process.env.NODE_ENV === 'production',
+      logged: true
     })
   ]
 };
