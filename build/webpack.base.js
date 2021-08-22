@@ -15,32 +15,32 @@ module.exports = {
   },
   module: {
     rules: [
-      // {
-      //   test: /\.(png|jpg|gif|jpeg|svg)$/,
-      //   type: 'asset',
-      //   parser: {
-      //     dataUrlCondition: {
-      //       maxSize: 1372125 // 1.3M - 1字节
-      //     }
-      //   },
-      //   generator: {
-      //     filename: './img/[name].[contenthash:8].[ext]'
-      //   }
-      // },
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 1372125, // 1.3M - 1字节
-              name: './img/[name].[contenthash:8].[ext]'
-            }
+        test: /\.(png|jpg|gif|jpeg|svg)$/,
+        type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 1372125 // 1.3M - 1字节
           }
-        ],
-        include: path.resolve(rootDir, './src/assets'),
-        exclude: /node_modules/ // 排除node_modules
+        },
+        generator: {
+          filename: './img/[name].[contenthash:8].[ext]'
+        }
       },
+      // {
+      //   test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+      //   use: [
+      //     {
+      //       loader: 'url-loader',
+      //       options: {
+      //         limit: 1372125, // 1.3M - 1字节
+      //         name: './img/[name].[contenthash:8].[ext]'
+      //       }
+      //     }
+      //   ],
+      //   include: path.resolve(rootDir, './src/assets'),
+      //   exclude: /node_modules/ // 排除node_modules
+      // },
       {
         test: /\.(le|c)ss$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'less-loader', 'postcss-loader'],
